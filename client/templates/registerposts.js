@@ -1,3 +1,10 @@
+
+Template.registerposts.helpers({
+	correo:function(){
+		return Meteor.users.findOne().emails[0].address
+	}
+});
+
 Template.registerposts.events({
 	"click #btnsend":function(e)
 	{
@@ -9,19 +16,8 @@ Template.registerposts.events({
 	}
 });
 Template.registerposts.onRendered(function(){
-	$("#fecha").datepicker();
+
 });
-
-
-
-/*
-*/
-
-
-<?php 
-
-
-
 
 
 
