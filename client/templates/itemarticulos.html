@@ -1,19 +1,10 @@
-<template name="posts">
-	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-		<ul>
-		{{#each DATOS}}
-		<li>
-			{{>item}}
-		</li>
-		{{/each}}
-	</ul>	
-	</div>
-	<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-		{{>registerposts}}
-	</div>
-
+<template name="itemarticulos">
+	{{#each foo}}
+		{{>itemplantilla}}
+	{{/each}}
 </template>
-<template name="item">
+<template name="itemplantilla">
+	
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<a href="/articulo/{{_id}}"><h3 class="panel-title">{{title}}</h3> Fecha: {{current_date}}</a> 
@@ -30,4 +21,3 @@
 		</div>
 	</div>	
 </template>
-	

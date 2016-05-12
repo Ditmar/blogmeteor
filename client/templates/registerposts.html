@@ -2,11 +2,14 @@
 	{{#if currentUser}}
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			
+			<img src="{{URL}}" width="200px" />
+			{{> upload_bootstrap}}
 			<form action="" id="formregister" method="POST" class="form-horizontal" role="form">
 			<div class="form-group">
 				<legend>Nuevas Noticias</legend>
 			</div>
-	
+			<input type="hidden" value="{{URL}}" name="images">
 			<input type="text" name="title" id="inputTitle" class="form-control" value="" placeholder="Titulo"  title="">
 			
 			<input type="text" name="autor" id="inputTitle" class="form-control"  disabled="true" value="{{correo}}" placeholder="Autor"  title="">
