@@ -1,6 +1,4 @@
  URL=new ReactiveVar("");
-
-
  Uploader.finished = function(index, fileInfo, templateContext) {
  	URL.set(fileInfo.url);
  	//console.log(fileInfo);   
