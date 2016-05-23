@@ -1,10 +1,25 @@
 Meteor.startup(function(){
+
+
+
 	//check
+	// "scigG9D6a3oTbmEot"
 	Meteor.methods({
+		"addAdminRoles":function(id)
+		{
+			//Roles.addUsersToRoles(id,["editPublish","deletePublish","deleteComents"]);
+		},
 		"coments.update" : function (id,c) {
 			//agregar codigo seguro
 			//------------------//
 			POSTS.update({_id:id},{$set : {coments:c}});
+		},
+		"item.update" : function(id,updated) {
+			console.log(id)
+			console.log(updated);
+			//POSTS.update({_id:id}, {$set:updated});
+			
+			POSTS.update({_id:id}, {$set:{title:updated.title,text:updated.text}});
 		}
 	});
 	

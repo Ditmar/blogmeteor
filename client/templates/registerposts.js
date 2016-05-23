@@ -1,3 +1,5 @@
+ 
+ IDPUBLISH=new ReactiveVar("0");
  URL=new ReactiveVar("");
  Uploader.finished = function(index, fileInfo, templateContext) {
  	URL.set(fileInfo.url);
@@ -30,6 +32,17 @@ Template.registerposts.events({
 		//console.log(r);
 	}
 });
+
+Template.item.events({
+	"click #btneditar" : function() {
+		if(Roles.userIsInRole(Accounts.userId(),"editPublish")) {
+			IDPUBLISH.set(this);
+			$("#modal_edit_role").modal();
+		}
+	}
+});
+
+
 Template.registerposts.onRendered(function(){
 
 });
